@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Navbar from "../../components/Navbar";
 import Tagline from "../../components/Tagline";
 import Link from "next/link";
-function index() {
+import axios from "axios";
+
+function Index() {
+  const [count, setCount] = useState(0);
+  const [loading, setLoading] = useState([true, "Fetching..."]);
+  useEffect(() => {
+    async function getCount() {
+      const { data } = await axios.get("/api/count");
+      setCount(data.payload);
+      setLoading([false]);
+    }
+
+    getCount();
+  });
   return (
     <>
       <Head>
@@ -69,6 +81,14 @@ function index() {
               </p>
               <br></br>
               <p>- Developer</p>
+              <br />
+              <div className="text-center text-slate-500">
+                {loading[0] == true ? (
+                  <span>{loading[1]}</span>
+                ) : (
+                  <span>Problem solved : {count}</span>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -77,4 +97,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
