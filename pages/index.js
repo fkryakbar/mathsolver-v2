@@ -100,12 +100,17 @@ export default function Home() {
                                 <h1 className="text-lg mb-2">
                                   {data.attributes.title}
                                 </h1>
-                                <img
-                                  className="mb-2"
-                                  src={
-                                    data.elements[0].elements[0].attributes.src
+                                {data.elements.map((subpod, i) => {
+                                  if (subpod.name == "subpod") {
+                                    return (
+                                      <img
+                                        key={i}
+                                        className="mb-2"
+                                        src={subpod.elements[0].attributes.src}
+                                      ></img>
+                                    );
                                   }
-                                ></img>
+                                })}
                                 <hr className="mb-3" />
                               </div>
                             );
@@ -117,12 +122,17 @@ export default function Home() {
                                 <h1 className="text-lg mb-2">
                                   {data.attributes.title}
                                 </h1>
-                                <img
-                                  className="mb-2"
-                                  src={
-                                    data.elements[0].elements[1].attributes.src
+                                {data.elements.map((subpod, i) => {
+                                  if (subpod.name == "subpod") {
+                                    return (
+                                      <img
+                                        key={i}
+                                        className="mb-2"
+                                        src={subpod.elements[1].attributes.src}
+                                      ></img>
+                                    );
                                   }
-                                ></img>
+                                })}
                                 <hr className="mb-3" />
                               </div>
                             );
@@ -132,12 +142,17 @@ export default function Home() {
                                 <h1 className="text-lg mb-2">
                                   {data.attributes.title}
                                 </h1>
-                                <img
-                                  className="mb-2"
-                                  src={
-                                    data.elements[0].elements[2].attributes.src
+                                {data.elements.map((subpod, i) => {
+                                  if (subpod.name == "subpod") {
+                                    return (
+                                      <img
+                                        key={i}
+                                        className="mb-2"
+                                        src={subpod.elements[2].attributes.src}
+                                      ></img>
+                                    );
                                   }
-                                ></img>
+                                })}
                                 <hr className="mb-3" />
                               </div>
                             );
