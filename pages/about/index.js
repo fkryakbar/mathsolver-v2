@@ -72,12 +72,12 @@ function Index() {
               <hr className="mt-2" />
               <p className="mt-3">
                 This App was created by Ahmad Fikri Akbar using Next JS. This
-                app is for solving mathematic questions. This app solve the
+                app is for solving mathematical questions. This app solves the
                 problem with Wolfram-Alpha API
               </p>
               <br></br>
               <p className="mt-3">
-                I hope this app will help you on your exam test like i do.
+                I hope this app will help you on your exam test as I do.
               </p>
               <br></br>
               <p>- Developer</p>
