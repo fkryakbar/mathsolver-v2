@@ -15,6 +15,7 @@ export default function Home() {
     setLoading(true);
     const { data } = await axios.post("/api/solve", { payload: input });
     if (data.status == 200) {
+      console.log(data.payload);
       result.unshift(data.payload);
     } else {
       setMessage([true, data.message]);
@@ -128,7 +129,10 @@ export default function Home() {
                                       <img
                                         key={i}
                                         className="mb-2"
-                                        src={subpod.elements[1].attributes.src}
+                                        src={
+                                          data.elements[0].elements[1]
+                                            .attributes.src
+                                        }
                                       ></img>
                                     );
                                   }
