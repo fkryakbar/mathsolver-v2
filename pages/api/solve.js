@@ -8,7 +8,9 @@ export default async function handler(req, res) {
     if (req.method == "POST") {
       const payload = req.body.payload;
       const { data } = await axios.get(
-        `http://api.wolframalpha.com/v2/query?appid=LYP6W3-AAYW45TYQU&input=${encodeURIComponent(
+        `http://api.wolframalpha.com/v2/query?appid=${
+          process.env.NEXT_PUBLIC_APPID
+        }&input=${encodeURIComponent(
           payload
         )}&podstate=Result__Step-by-step+solution&format=image`
       );
